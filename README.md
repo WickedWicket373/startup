@@ -1,62 +1,85 @@
-# Your startup name here
+# ForgeCRM
 
 [My Notes](notes.md)
 
-A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-> [!NOTE]
-> This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
-
-> [!NOTE]
-> If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
+ForgeCRM is a client dashboard platform for AI agencies. The agency manages its clients in one place and uses AI to build each client a custom dashboard, and each client logs in to see their own.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Every B2B business runs on a similar basic dasboard setup behind the scenes. But every client also wants to see something a little different, and building custom dashboards by hand takes up hours of development. **ForgeCRM** would start as the CRM for my AI agency. I could track every client in one place, and the AI Tool Builder turns a sentence like *"show how many calls their AI receptionist handled this week"* into a working widget on a client's dashboard in a fraction of the time it would take to code it all by hand. Clients log in to their own branded portal to see results live and send us requests. Because every tool is built from the same flexible base, the long-term plan is to offer ForgeCRM to other agencies under their own brand, or directly to businesses that want to design their own dashboards.
 
 ### Design
 
-![Design image](placeholder.png)
+![Login sketch](images/login.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Everyone uses the same login page. After logging in, agency team members are routed to the agency dashboard and clients are routed to their own portal.
+
+![Agency dashboard sketch](images/dashboard.png)
+
+The agency dashboard shows the agency's clients and a live feed of what the team and clients are doing.
+
+![Tool builder sketch](images/tool-builder.png)
+
+In the AI Tool Builder, an agency team member picks a client, describes a tool, previews what the AI generated, and adds it to that client's dashboard.
+
+![Client portal sketch](images/client-portal.png)
+
+The client portal is what the agency's client sees. It is their branded dashboard made of the tools the agency built for them, plus a way to send the agency requests.
+
+Here is the sequence of what happens when the agency builds a new tool and the client sees it appear:
 
 ```mermaid
 sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
+    actor Ava as Ava (agency)
+    actor Kim as Dr. Kim (client)
+    participant Server
+    participant AI as Claude API
+    participant DB as MongoDB
+    Ava->>Server: Generate a tool for Acme Dental (prompt)
+    Server->>AI: Prompt + allowed widget types
+    AI-->>Server: JSON tool spec
+    Server-->>Ava: Tool preview
+    Ava->>Server: Add tool to Acme Dental
+    Server->>DB: Store tool spec
+    Server-->>Kim: WebSocket: new tool on your dashboard
 ```
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Secure registration, login, and logout with two kinds of users: agency team members and client users
+- Agency team can add, edit, and remove clients, and track each client's plan, stage, and renewal date
+- AI Tool Builder where the agency describes a tool in plain English and AI builds it as a widget (chart, stat card, table, or calculator) that can be previewed, refined, and saved
+- Each client gets their own dashboard made of the tools the agency built for them
+- Client portal with the client's name and branding, where they see their dashboard and send requests to the agency
+- Clients can only see their own dashboard and data, never another client's
+- Live updates: clients see new tools and data as soon as the agency adds them, and the agency sees client requests and activity as they happen
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Correct semantic structure for the application (header, nav, main, section, footer). Pages for login, the agency dashboard, client management, the tool builder, and the client portal. The footer links to my GitHub repository.
+- **CSS** - A clean, professional look that works on desktop and mobile using flexbox and grid for the widget layout. Consistent color scheme and whitespace with good contrast. The client portal uses each client's accent color so it feels like their own. Simple animations when a new widget is added or a new item appears in the activity feed.
+- **React** - A single page application built with components for the login form, navigation bar, client list, tool builder, activity feed, request form, and each widget type. React Router sends agency users to the agency views and client users to their portal, and blocks each type of user from the other's pages. Widgets are rendered from saved JSON tool specs, so an AI-generated tool is just data that a generic `<Widget>` component knows how to draw. The display updates immediately when data changes.
+- **Service** - A Node.js/Express backend with endpoints for:
+  - Registering, logging in, and logging out users, with each user marked as an agency member or a client
+  - Creating, reading, updating, and deleting clients (agency only)
+  - Saving, listing, editing, and deleting tools on a client's dashboard (agency can edit, clients can only view their own)
+  - Sending and viewing client requests
+  - Generating a tool: the backend sends the description to the Anthropic Claude API and returns a JSON tool spec. The API is called from the backend so the key stays secret, and the AI can only choose from a fixed set of widget types and fields, so it never generates code that runs in the browser.
+- **DB/Login** - MongoDB stores users, their role, and auth tokens, as well as clients, tool specs, dashboard data, requests, and activity history. Endpoints check the logged-in user's role and client before returning anything, so a client can only ever read their own data. I'm thinking of using supabase instead as well.
+- **WebSocket** - When the agency adds or changes a tool or data on a client's dashboard, the server pushes the update to that client's open portal. When a client sends a request or views their dashboard, the server pushes it to the agency's live activity feed.
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
-> Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
-
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Git commit requirement)
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology including your 3rd party API and use of WebSocket
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] I completed the prerequisites for this deliverable (Git commit requirement)
+- [x] **Proper use of Markdown** - Used headings, links, images, bold and italic text, lists, code formatting, and a Mermaid diagram.
+- [x] **A concise and compelling elevator pitch** - See the elevator pitch section above.
+- [x] **Description of key features** - See the key features section above.
+- [x] **Description of how you will use each technology including your 3rd party API and use of WebSocket** - See the technologies section above. The third-party API is the Anthropic Claude API, used for AI tool generation. WebSocket pushes new tools to clients and client activity to the agency in real time.
+- [x] **One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.** - Four sketches (login, agency dashboard, AI Tool Builder, and client portal) are embedded in the design section above.
 
 ## 🚀 AWS deliverable
 
