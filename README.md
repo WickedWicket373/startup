@@ -26,24 +26,6 @@ In the AI Tool Builder, an agency team member picks a client, describes a tool, 
 
 The client portal is what the agency's client sees. It is their branded dashboard made of the tools the agency built for them, plus a way to send the agency requests.
 
-Here is the sequence of what happens when the agency builds a new tool and the client sees it appear:
-
-```mermaid
-sequenceDiagram
-    actor Ava as Ava (agency)
-    actor Kim as Dr. Kim (client)
-    participant Server
-    participant AI as Claude API
-    participant DB as MongoDB
-    Ava->>Server: Generate a tool for Acme Dental (prompt)
-    Server->>AI: Prompt + allowed widget types
-    AI-->>Server: JSON tool spec
-    Server-->>Ava: Tool preview
-    Ava->>Server: Add tool to Acme Dental
-    Server->>DB: Store tool spec
-    Server-->>Kim: WebSocket: new tool on your dashboard
-```
-
 ### Key features
 
 - Secure registration, login, and logout with two kinds of users: agency team members and client users
