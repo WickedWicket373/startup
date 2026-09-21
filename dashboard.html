@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — ForgeCRM Agency Dashboard</title>
+</head>
+<body>
+  <header>
+    <p class="brand"><strong>FC</strong> ForgeCRM</p>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Login</a></li>
+        <li><a href="dashboard.html" aria-current="page">Agency Dashboard</a></li>
+        <li><a href="tool-builder.html">Tool Builder</a></li>
+        <li><a href="portal.html">Client Portal</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="sidebar" aria-label="Agency workspace">
+    <p class="workspace-name">My Agency <br><small>agency workspace</small></p>
+
+    <section aria-label="Overview">
+      <h2>Overview</h2>
+      <ul>
+        <li><a href="dashboard.html" aria-current="page">Portfolio</a></li>
+        <li><a href="#">Automations (6)</a></li>
+      </ul>
+    </section>
+
+    <section aria-label="CRM">
+      <h2>CRM</h2>
+      <ul>
+        <li><a href="#">Clients (12)</a></li>
+        <li><a href="#">Contacts (348)</a></li>
+        <li><a href="#">Deals (27)</a></li>
+        <li><a href="#">Tasks (5)</a></li>
+      </ul>
+    </section>
+
+    <section aria-label="Workspace">
+      <h2>Workspace</h2>
+      <ul>
+        <li><a href="tool-builder.html">Tool builder</a></li>
+        <li><a href="#">Branding</a></li>
+        <li><a href="#">Billing</a></li>
+      </ul>
+    </section>
+
+    <p class="owner">Jordan Reyes <br><small>Owner</small></p>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>Portfolio</h1>
+      <p>12 clients · 38 tools deployed</p>
+      <p>
+        This is the agency-wide view every team member sees after signing
+        in. It rolls up managed revenue, client health, and deployed tools
+        across the whole portfolio, and lists every client the agency
+        manages.
+      </p>
+    </section>
+
+    <section class="kpis" aria-label="Portfolio summary">
+      <!-- PLACEHOLDER: database data — replaced by a MongoDB read at the DB deliverable -->
+      <article class="stat-card">
+        <h2>Managed MRR</h2>
+        <p class="stat-value">$412k</p>
+        <p class="stat-delta">&uarr; 4.1% vs. last month</p>
+      </article>
+      <article class="stat-card">
+        <h2>Active clients</h2>
+        <p class="stat-value">12</p>
+        <p class="stat-delta">2 in onboarding</p>
+      </article>
+      <article class="stat-card">
+        <h2>Tools deployed</h2>
+        <p class="stat-value">38</p>
+        <p class="stat-delta">6 drafts unpublished</p>
+      </article>
+      <article class="stat-card">
+        <h2>Avg. health</h2>
+        <p class="stat-value">87</p>
+        <p class="stat-delta">2 clients at risk</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU.</p>
+    <ul>
+      <li><a href="https://github.com/WickedWicket373/startup">GitHub repository</a></li>
+      <li><a href="about.html">About this project</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
