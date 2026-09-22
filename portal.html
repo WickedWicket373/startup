@@ -66,6 +66,45 @@
         <p class="stat-delta">&darr; $1.20 vs. last month</p>
       </article>
     </section>
+
+    <section class="mrr-history" aria-label="Monthly recurring revenue">
+      <h2>Monthly recurring revenue</h2>
+      <!-- PLACEHOLDER: database data — replaced by a MongoDB read at the DB deliverable -->
+      <p>Trailing 12 months, ending at $76.2k in December.</p>
+      <p>
+        <em>Rendered as a chart by the <code>&lt;Widget&gt;</code> component
+        once monthly figures are read from MongoDB.</em>
+      </p>
+    </section>
+
+    <section class="channels" aria-label="Top channels">
+      <h2>Top channels</h2>
+      <!-- PLACEHOLDER: database data — replaced by a MongoDB read at the DB deliverable -->
+      <ul>
+        <li>Organic search — $28.4k</li>
+        <li>Paid social — $19.1k</li>
+        <li>Email — $16.7k</li>
+        <li>Referral — $12.0k</li>
+      </ul>
+    </section>
+
+    <section class="support" aria-label="Contact the agency">
+      <h2>Questions?</h2>
+      <p>Message your account manager and the team will follow up.</p>
+      <form action="#" method="post">
+        <p>
+          <label for="subject">Subject</label><br>
+          <input type="text" id="subject" name="subject" placeholder="Question about this month's churn rate">
+        </p>
+        <p>
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        </p>
+        <p>
+          <button type="submit">Send to account manager</button>
+        </p>
+      </form>
+    </section>
   </main>
 
   <footer>
