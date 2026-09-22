@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ForgeCRM</title>
+</head>
+<body>
+  <header>
+    <p class="brand"><strong>FC</strong> ForgeCRM</p>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Login</a></li>
+        <li><a href="dashboard.html">Agency Dashboard</a></li>
+        <li><a href="tool-builder.html">Tool Builder</a></li>
+        <li><a href="portal.html">Client Portal</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>About ForgeCRM</h1>
+      <p>
+        ForgeCRM is a client dashboard platform built for AI agencies. My
+        agency builds AI tools for small businesses - ForgeCRM is where my
+        team manages those clients, and where each client logs in to see
+        their own dashboard. Instead of hand-coding every client's
+        dashboard, someone on the team describes the tool they want in
+        plain English and the AI builds it.
+      </p>
+      <p>
+        The AI never writes code. It returns a JSON "tool spec" - widget
+        type, data source, filters, and fields, documented in
+        <a href="tool-spec.md">tool-spec.md</a> - which one generic
+        <code>&lt;Widget&gt;</code> component knows how to render. Tool specs
+        live in MongoDB and belong to a specific client, so a client can only
+        ever see their own tools and data.
+      </p>
+      <p>
+        Built by Jacob Arnold for CS 260 (Web Programming) at BYU.
+      </p>
+    </section>
+
+    <section class="tech" aria-label="Technologies">
+      <h2>Technologies</h2>
+      <p>The required stack, and how ForgeCRM uses each piece:</p>
+      <ul>
+        <li><strong>HTML</strong> - this deliverable: semantic pages for login, the agency dashboard, the tool builder, and the client portal.</li>
+        <li><strong>CSS</strong> - a clean, professional look built with flexbox/grid, coming next deliverable.</li>
+        <li><strong>React (Vite)</strong> - a single-page app with a generic <code>&lt;Widget&gt;</code> component that renders any tool spec.</li>
+        <li><strong>Node.js/Express</strong> - the backend service, including the endpoint that calls the Anthropic Claude API.</li>
+        <li><strong>MongoDB</strong> - stores users, clients, tool specs, and activity history.</li>
+        <li><strong>bcrypt</strong> - hashes every stored password.</li>
+        <li><strong>WebSocket</strong> - pushes new tools to clients and client activity to the agency in real time.</li>
+        <li><strong>Anthropic Claude API</strong> - the third-party API that turns a plain-English description into a tool spec.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU.</p>
+    <ul>
+      <li><a href="https://github.com/WickedWicket373/startup">GitHub repository</a></li>
+      <li><a href="notes.md">Course notes</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
