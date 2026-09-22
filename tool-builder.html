@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tool Builder — Retention Report — ForgeCRM</title>
+</head>
+<body>
+  <header>
+    <p class="brand"><strong>FC</strong> ForgeCRM</p>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Login</a></li>
+        <li><a href="dashboard.html">Agency Dashboard</a></li>
+        <li><a href="tool-builder.html" aria-current="page">Tool Builder</a></li>
+        <li><a href="portal.html">Client Portal</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tool-header">
+      <h1>Retention Report</h1>
+      <p>Tool · Acme Retail · Draft</p>
+      <p>
+        The Tool Builder is where an agency team member describes a dashboard
+        widget in plain English, watches the AI turn it into a live preview,
+        and publishes it to a specific client's portal. Nothing here writes
+        code — the AI can only choose from a fixed set of widget types and
+        known data fields, described in <a href="tool-spec.md">tool-spec.md</a>.
+      </p>
+    </section>
+
+    <section class="describe-tool" aria-label="Describe the tool">
+      <h2>Describe the tool</h2>
+      <!-- PLACEHOLDER: 3rd-party API — replaced by a live call to the Anthropic Claude API at the Service deliverable -->
+      <form action="#" method="post">
+        <p>
+          <label for="prompt">What should this tool do?</label><br>
+          <textarea id="prompt" name="prompt" rows="4" cols="50">Show me which Acme customers are likely to churn next month, with revenue at risk.</textarea>
+        </p>
+        <p>
+          <button type="submit">Regenerate</button>
+        </p>
+      </form>
+    </section>
+
+    <section class="data-sources" aria-label="Data sources">
+      <h2>Data sources</h2>
+      <ul>
+        <li>Stripe — synced</li>
+        <li>HubSpot — synced</li>
+        <li>Intercom — synced</li>
+        <li>GA4 — needs auth</li>
+      </ul>
+    </section>
+
+    <section class="build-steps" aria-label="Build steps">
+      <h2>Build steps</h2>
+      <!-- PLACEHOLDER: 3rd-party API — the checklist the Claude API reports back while generating this tool -->
+      <ol>
+        <li>Read churn signals from Stripe + Intercom — done</li>
+        <li>Score 348 accounts by risk — done</li>
+        <li>Choose a layout for the report — in progress</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU.</p>
+    <ul>
+      <li><a href="https://github.com/WickedWicket373/startup">GitHub repository</a></li>
+      <li><a href="about.html">About this project</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
