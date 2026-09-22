@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme Retail Portal — ForgeCRM</title>
+</head>
+<body>
+  <header>
+    <p class="brand"><strong>FC</strong> ForgeCRM</p>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Login</a></li>
+        <li><a href="dashboard.html">Agency Dashboard</a></li>
+        <li><a href="tool-builder.html">Tool Builder</a></li>
+        <li><a href="portal.html" aria-current="page">Client Portal</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="portal-nav" aria-label="Acme Retail portal">
+    <p class="client-name"><strong>AR</strong> Acme Retail</p>
+    <ul>
+      <li><a href="#" aria-current="page">Overview</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Invoices</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>Performance overview</h1>
+      <p>December 2026 · prepared by your agency team</p>
+      <!-- PLACEHOLDER: WebSocket data — this timestamp is pushed live at the WebSocket deliverable -->
+      <p>Updated 4 min ago</p>
+      <p>
+        This is what Acme Retail sees after signing in: a read-only dashboard
+        made entirely of the tools the agency has published for them, plus a
+        way to reach their account manager. Acme never sees another client's
+        data — every widget here is scoped to their own <code>clientId</code>.
+      </p>
+    </section>
+
+    <section class="stats" aria-label="Key metrics">
+      <!-- PLACEHOLDER: database data — replaced by a MongoDB read at the DB deliverable -->
+      <article class="stat-card">
+        <h2>MRR</h2>
+        <p class="stat-value">$76.2k</p>
+        <p class="stat-delta">&uarr; 6.5% vs. last month</p>
+      </article>
+      <article class="stat-card">
+        <h2>Churn rate</h2>
+        <p class="stat-value">2.38%</p>
+        <p class="stat-delta">&darr; 0.3 pts vs. last month</p>
+      </article>
+      <article class="stat-card">
+        <h2>Active users</h2>
+        <p class="stat-value">4,821</p>
+        <p class="stat-delta">&uarr; 142 this month</p>
+      </article>
+      <article class="stat-card">
+        <h2>Avg. order</h2>
+        <p class="stat-value">$84.10</p>
+        <p class="stat-delta">&darr; $1.20 vs. last month</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU.</p>
+    <ul>
+      <li><a href="https://github.com/WickedWicket373/startup">GitHub repository</a></li>
+      <li><a href="about.html">About this project</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
