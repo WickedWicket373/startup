@@ -87,7 +87,10 @@ main {
 }
 
 /* white cards with the thinner 2px border */
-.login-form {
+.login-form,
+.stat-card,
+.clients,
+.activity-feed {
   background: #ffffff;
   border: 2px solid var(--border);
   border-radius: var(--radius);
@@ -253,4 +256,148 @@ footer a[href*="github.com"] {
   border-radius: var(--radius);
   font-weight: 500;
   text-decoration: none;
+}
+
+/* ---------- Agency sidebar (like the crm Sidebar) ---------- */
+
+.sidebar {
+  padding: 1rem;
+  background: var(--panel);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.workspace-name {
+  font-weight: 600;
+}
+
+.sidebar section {
+  margin-top: 1.25rem;
+}
+
+/* small uppercase labels: sidebar groups and stat card titles */
+.sidebar h2,
+.stat-card h2 {
+  margin-bottom: 0.375rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.375rem 0.625rem;
+  border-radius: var(--radius);
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: var(--hover);
+}
+
+.sidebar a[aria-current="page"] {
+  background: var(--active);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.owner {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+
+/* ---------- Page headers and stat cards ---------- */
+
+/* "12 clients · 38 tools deployed" under the title */
+.page-header h1 + p {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-header p {
+  color: var(--text-2);
+}
+
+.stat-value {
+  margin: 0.25rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.stat-delta {
+  color: var(--text-2);
+  font-size: 0.8rem;
+}
+
+/* ---------- Clients table ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  caption-side: bottom;
+  padding-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+thead th {
+  padding: 0.5rem 0.75rem;
+  background: var(--input);
+  border-bottom: 2px solid var(--border);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+tbody th,
+td {
+  padding: 0.625rem 0.75rem;
+  border-bottom: 2px solid var(--faint);
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody th {
+  font-weight: 500;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--input);
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- Lists inside cards ---------- */
+
+.activity-feed ul {
+  margin-top: 0.5rem;
+}
+
+.activity-feed li {
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--faint);
+}
+
+.activity-feed li:last-child {
+  border-bottom: none;
 }
