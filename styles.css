@@ -90,7 +90,10 @@ main {
 .login-form,
 .stat-card,
 .clients,
-.activity-feed {
+.activity-feed,
+.mrr-history,
+.channels,
+.support {
   background: #ffffff;
   border: 2px solid var(--border);
   border-radius: var(--radius);
@@ -389,15 +392,65 @@ tbody tr:last-child td {
 
 /* ---------- Lists inside cards ---------- */
 
-.activity-feed ul {
+.activity-feed ul,
+.channels ul {
   margin-top: 0.5rem;
 }
 
-.activity-feed li {
+.activity-feed li,
+.channels li {
   padding: 0.5rem 0;
   border-bottom: 2px solid var(--faint);
 }
 
-.activity-feed li:last-child {
+.activity-feed li:last-child,
+.channels li:last-child {
   border-bottom: none;
+}
+
+/* ---------- Client portal ---------- */
+
+/* the portal's own top bar, with crm-style underlined tabs */
+.portal-nav {
+  padding: 0.75rem 1.25rem;
+  background: #ffffff;
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.client-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.portal-nav a {
+  display: block;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.portal-nav a:hover {
+  color: var(--text);
+}
+
+.portal-nav a[aria-current="page"] {
+  border-bottom-color: var(--text);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.mrr-history p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#message {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.support form p {
+  margin-bottom: 0.75rem;
 }
