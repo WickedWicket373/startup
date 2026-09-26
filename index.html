@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="flex flex-col gap-4 p-4 min-h-screen">
   <header>
     <p class="brand"><strong>FC</strong> ForgeCRM</p>
     <nav aria-label="Primary navigation">
@@ -24,13 +24,13 @@
     </nav>
   </header>
 
-  <main>
+  <main class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center flex-1">
     <section class="login-pitch" aria-label="Product pitch">
       <h1>Every number about your business, in one place.</h1>
       <p>Revenue, retention and pipeline — refreshed hourly from the tools you already use.</p>
     </section>
 
-    <section class="login-form" aria-label="Sign in">
+    <section class="login-form w-full lg:max-w-md lg:justify-self-center" aria-label="Sign in">
       <h2>Sign in</h2>
       <p>
         This one page signs in both kinds of ForgeCRM users. Agency team
