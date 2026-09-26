@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — ForgeCRM Agency Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
+<body class="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] gap-4 p-4 min-h-screen">
+  <header class="md:col-span-2">
     <p class="brand"><strong>FC</strong> ForgeCRM</p>
     <nav aria-label="Primary navigation">
       <ul>
@@ -52,7 +57,7 @@
     <p class="owner">Jordan Reyes <br><small>Owner</small></p>
   </nav>
 
-  <main>
+  <main class="flex flex-col gap-4 min-w-0">
     <section class="page-header">
       <h1>Portfolio</h1>
       <p>12 clients · 38 tools deployed</p>
@@ -64,7 +69,7 @@
       </p>
     </section>
 
-    <section class="kpis" aria-label="Portfolio summary">
+    <section class="kpis grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Portfolio summary">
       <!-- PLACEHOLDER: database data — replaced by a MongoDB read at the DB deliverable -->
       <article class="stat-card">
         <h2>Managed MRR</h2>
@@ -88,7 +93,7 @@
       </article>
     </section>
 
-    <section class="clients" aria-label="Clients">
+    <section class="clients overflow-x-auto" aria-label="Clients">
       <h2>Clients</h2>
       <!-- PLACEHOLDER: database data — replaced by a MongoDB read at the DB deliverable -->
       <table>
@@ -170,8 +175,8 @@
     </section>
   </main>
 
-  <footer>
-    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU.</p>
+  <footer class="md:col-span-2">
+    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU. Built by Jacob Arnold.</p>
     <ul>
       <li><a href="https://github.com/WickedWicket373/startup">GitHub repository</a></li>
       <li><a href="about.html">About this project</a></li>
