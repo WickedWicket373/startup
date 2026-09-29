@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tool Builder — Retention Report — ForgeCRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="flex flex-col gap-4 p-4 min-h-screen">
   <header>
     <p class="brand"><strong>FC</strong> ForgeCRM</p>
     <nav aria-label="Primary navigation">
@@ -19,8 +24,8 @@
     </nav>
   </header>
 
-  <main>
-    <section class="tool-header">
+  <main class="grid grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_260px] gap-4 items-start">
+    <section class="tool-header lg:col-span-3">
       <h1>Retention Report</h1>
       <p>Tool · Acme Retail · Draft</p>
       <p>
@@ -32,7 +37,7 @@
       </p>
     </section>
 
-    <section class="describe-tool" aria-label="Describe the tool">
+    <section class="describe-tool lg:col-start-1 lg:row-start-2" aria-label="Describe the tool">
       <h2>Describe the tool</h2>
       <!-- PLACEHOLDER: 3rd-party API — replaced by a live call to the Anthropic Claude API at the Service deliverable -->
       <form action="#" method="post">
@@ -46,7 +51,7 @@
       </form>
     </section>
 
-    <section class="data-sources" aria-label="Data sources">
+    <section class="data-sources lg:col-start-1 lg:row-start-3" aria-label="Data sources">
       <h2>Data sources</h2>
       <ul>
         <li>Stripe — synced</li>
@@ -56,7 +61,7 @@
       </ul>
     </section>
 
-    <section class="build-steps" aria-label="Build steps">
+    <section class="build-steps lg:col-start-1 lg:row-start-4" aria-label="Build steps">
       <h2>Build steps</h2>
       <!-- PLACEHOLDER: 3rd-party API — the checklist the Claude API reports back while generating this tool -->
       <ol>
@@ -66,7 +71,7 @@
       </ol>
     </section>
 
-    <section class="canvas" aria-label="Canvas">
+    <section class="canvas lg:col-start-2 lg:row-start-2 lg:row-span-3" aria-label="Canvas">
       <h2>Canvas</h2>
       <p>Grid shows while dragging. This tool has two widgets so far.</p>
 
@@ -94,7 +99,7 @@
       <p>Drop a widget here — <button type="button">+ Add widget</button></p>
     </section>
 
-    <section class="widget-properties" aria-label="Widget properties">
+    <section class="widget-properties lg:col-start-3 lg:row-start-2 lg:row-span-3" aria-label="Widget properties">
       <h2>Widget properties</h2>
       <form action="#" method="post">
         <p>
@@ -141,7 +146,7 @@
       </form>
     </section>
 
-    <section class="tool-spec-preview" aria-label="Tool spec JSON">
+    <section class="tool-spec-preview lg:col-span-3" aria-label="Tool spec JSON">
       <h2>Tool spec (JSON)</h2>
       <p>
         This is the data the AI actually returns for the "Revenue at risk"
@@ -182,7 +187,7 @@
   </main>
 
   <footer>
-    <p>ForgeCRM is my CS 260 startup project at BYU.</p>
+    <p>ForgeCRM is my CS 260 startup project at BYU. Built by Jacob Arnold.</p>
     <ul>
       <li><a href="https://github.com/WickedWicket373/startup">GitHub repository</a></li>
       <li><a href="about.html">About my project</a></li>
