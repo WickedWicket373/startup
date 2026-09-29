@@ -85,19 +85,17 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **DB data placeholder** - Hardcoded markup standing in for MongoDB reads: the clients table and KPI cards on `dashboard.html`, and the stat cards/top channels on `portal.html`. Numbers not actually shown in the mockups (e.g. per-week or per-account breakdowns, the 11 unlabeled months of the MRR chart) are left as a note that the React `<Widget>` component renders them later, instead of inventing data. Marked with HTML comments.
 - [x] **WebSocket placeholder** - A "Live activity" feed on `dashboard.html` and the "Updated 4 min ago" timestamp on `portal.html`, standing in for the two realtime flows (agency publishes a tool -> client portal updates; client acts -> agency feed updates). Marked with HTML comments.
 
-See also [design-notes.md](design-notes.md) for the visual system pulled from the mockups, to carry into the CSS deliverable.
-
 ## 🚀 CSS deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
-- [ ] **Visually appealing colors and layout. No overflowing elements.** - I did not complete this part of the deliverable.
-- [ ] **Use of a CSS framework** - I did not complete this part of the deliverable.
-- [ ] **All visual elements styled using CSS** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing using flexbox and/or grid display** - I did not complete this part of the deliverable.
-- [ ] **Use of a imported font** - I did not complete this part of the deliverable.
-- [ ] **Use of different types of selectors including element, class, ID, and pseudo selectors** - I did not complete this part of the deliverable.
+- [x] **Visually appealing colors and layout. No overflowing elements.** - The look comes from my crm app: mint (`#f0fdfa`) panels, white cards, thick `#525252` borders, 10px rounded corners, and dark `#262626` primary buttons. The layouts follow the four mockups in `images/`. Wide content (the clients table, the JSON spec) scrolls inside its own card, so nothing pushes the page sideways, even at phone width.
+- [x] **Use of a CSS framework** - Tailwind CSS v4, loaded from the CDN (`@tailwindcss/browser`). Tailwind classes in the HTML handle the layout (`grid`, `flex`, `gap-4`, `lg:col-span-3`, `overflow-x-auto`, ...). `styles.css` holds the colors, borders and type.
+- [x] **All visual elements styled using CSS** - The header/nav, agency sidebar, portal tabs, stat cards, clients table (striped rows), activity feed, forms (inputs, selects, fieldset, radios, primary/secondary buttons), tool builder widgets, JSON `<pre>` panel, about page mockup gallery, and footer are all styled.
+- [x] **Responsive to window resizing using flexbox and/or grid display** - Grid: the dashboard sidebar sits beside `main` from `md:` up and stacks on phones; KPI/stat cards go 1 → 2 → 4 columns; the tool builder is 3 columns at `lg:` and stacks below; the login page is 2 columns at `lg:`; the mockup gallery is 2 columns at `md:`. Flexbox: the header, nav, and footer wrap on small screens.
+- [x] **Use of a imported font** - Geist Mono from Google Fonts, the same font as my crm app.
+- [x] **Use of different types of selectors including element, class, ID, and pseudo selectors** - Element (`body`, `table`, `pre`, `fieldset`), class (`.stat-card`, `.sidebar`, `.widget-preview`), ID (`#prompt`, `#message`, `#github-link`), pseudo-class (`:hover`, `:focus`, `:focus-visible`, `:nth-child(even)`, `:first-of-type`, `:last-child`), attribute (`a[aria-current="page"]`, `a[href*="github.com"]`), and combinators (`.page-header h1 + p`, `.canvas > h2`). See `styles.css`.
 
 ## 🚀 React part 1: Routing deliverable
 
