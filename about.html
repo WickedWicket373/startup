@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — ForgeCRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="flex flex-col gap-4 p-4 min-h-screen">
   <header>
     <p class="brand"><strong>FC</strong> ForgeCRM</p>
     <nav aria-label="Primary navigation">
@@ -19,7 +24,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="flex flex-col gap-4">
     <section class="intro">
       <h1>About ForgeCRM</h1>
       <p>
@@ -43,9 +48,9 @@
       </p>
     </section>
 
-    <section class="mockups" aria-label="Design mockups">
-      <h2>Design mockups</h2>
-      <p>
+    <section class="mockups grid grid-cols-1 md:grid-cols-2 gap-4" aria-label="Design mockups">
+      <h2 class="md:col-span-2">Design mockups</h2>
+      <p class="md:col-span-2">
         These four sketches drove every page in this deliverable and will
         drive the CSS deliverable's visual design next.
       </p>
@@ -76,7 +81,7 @@
       <p>The required stack, and how ForgeCRM uses each piece:</p>
       <ul>
         <li><strong>HTML</strong> - this deliverable: semantic pages for login, the agency dashboard, the tool builder, and the client portal.</li>
-        <li><strong>CSS</strong> - a clean, professional look built with flexbox/grid, coming next deliverable.</li>
+        <li><strong>CSS</strong> - Tailwind for layout (flexbox/grid) plus my own <code>styles.css</code> with the colors and borders from my crm app.</li>
         <li><strong>React (Vite)</strong> - a single-page app with a generic <code>&lt;Widget&gt;</code> component that renders any tool spec.</li>
         <li><strong>Node.js/Express</strong> - the backend service, including the endpoint that calls the Anthropic Claude API.</li>
         <li><strong>MongoDB</strong> - stores users, clients, tool specs, and activity history.</li>
@@ -88,7 +93,7 @@
   </main>
 
   <footer>
-    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU.</p>
+    <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU. Built by Jacob Arnold.</p>
     <ul>
       <li><a href="https://github.com/WickedWicket373/startup">GitHub repository</a></li>
       <li><a href="notes.md">Course notes</a></li>
