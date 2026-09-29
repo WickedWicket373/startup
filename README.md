@@ -74,7 +74,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits) - Git commits are done for this deliverable; I still need to confirm Simon is deployed.
+- [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits) - Git commits are done for this deliverable; I still need to confirm Simon is deployed.
 - [x] **HTML pages** - Five pages, one per major view: `index.html` (login), `dashboard.html` (agency Portfolio), `tool-builder.html` (AI Tool Builder), `portal.html` (client portal), and `about.html` (what the app is, tech used).
 - [x] **Proper HTML element usage** - Every page uses `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`, real heading hierarchy, `<table>` with `<caption>`/`<thead>`/`<th scope>`, `<form>`/`<fieldset>`/`<label>`, and `<ul>`/`<ol>` for lists - no unstructured div soup.
 - [x] **Links** - A shared `<nav>` linking all five pages appears on every page, plus an external link to my GitHub repository in every footer.
@@ -89,13 +89,13 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
+- [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
 - [x] **Visually appealing colors and layout. No overflowing elements.** - The look comes from my crm app: mint (`#f0fdfa`) panels, white cards, thick `#525252` borders, 10px rounded corners, and dark `#262626` primary buttons. The layouts follow the four mockups in `images/`. Wide content (the clients table, the JSON spec) scrolls inside its own card, so nothing pushes the page sideways, even at phone width.
 - [x] **Use of a CSS framework** - Tailwind CSS v4, loaded from the CDN (`@tailwindcss/browser`). Tailwind classes in the HTML handle the layout (`grid`, `flex`, `gap-4`, `lg:col-span-3`, `overflow-x-auto`, ...). `styles.css` holds the colors, borders and type.
 - [x] **All visual elements styled using CSS** - The header/nav, agency sidebar, portal tabs, stat cards, clients table (striped rows), activity feed, forms (inputs, selects, fieldset, radios, primary/secondary buttons), tool builder widgets, JSON `<pre>` panel, about page mockup gallery, and footer are all styled.
 - [x] **Responsive to window resizing using flexbox and/or grid display** - Grid: the dashboard sidebar sits beside `main` from `md:` up and stacks on phones; KPI/stat cards go 1 → 2 → 4 columns; the tool builder is 3 columns at `lg:` and stacks below; the login page is 2 columns at `lg:`; the mockup gallery is 2 columns at `md:`. Flexbox: the header, nav, and footer wrap on small screens.
 - [x] **Use of a imported font** - Geist Mono from Google Fonts, the same font as my crm app.
-- [x] **Use of different types of selectors including element, class, ID, and pseudo selectors** - Element (`body`, `table`, `pre`, `fieldset`), class (`.stat-card`, `.sidebar`, `.widget-preview`), ID (`#prompt`, `#message`, `#github-link`), pseudo-class (`:hover`, `:focus`, `:focus-visible`, `:nth-child(even)`, `:first-of-type`, `:last-child`), attribute (`a[aria-current="page"]`, `a[href*="github.com"]`), and combinators (`.page-header h1 + p`, `.canvas > h2`). See `styles.css`.
+- [x] **Use of different types of selectors including element, class, ID, and pseudo selectors** - See `styles.css'.
 
 ## 🚀 React part 1: Routing deliverable
 
