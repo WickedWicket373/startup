@@ -14,8 +14,7 @@
   margin-top: 1.25rem;
 }
 
-.sidebar h2,
-.stat-card h2 {
+.sidebar h2 {
   margin-bottom: 0.375rem;
   color: var(--muted);
   font-size: 0.7rem;
@@ -51,35 +50,12 @@
   font-weight: 500;
 }
 
-.page-header h1 + p {
-  color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.page-header p {
-  color: var(--text-2);
-}
-
-.stat-card,
 .clients,
 .activity-feed {
   background: #ffffff;
   border: 2px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem;
-}
-
-.stat-value {
-  margin: 0.25rem 0;
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-
-.stat-delta {
-  color: var(--text-2);
-  font-size: 0.8rem;
 }
 
 table {

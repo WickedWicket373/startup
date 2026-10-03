@@ -1,0 +1,65 @@
+.mrr-history,
+.channels,
+.support {
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.portal-nav {
+  padding: 0.75rem 1.25rem;
+  background: #ffffff;
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.client-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.portal-nav a {
+  display: block;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.portal-nav a:hover {
+  color: var(--text);
+}
+
+.portal-nav a[aria-current="page"] {
+  border-bottom-color: var(--text);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.mrr-history p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.channels ul {
+  margin-top: 0.5rem;
+}
+
+.channels li {
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--faint);
+}
+
+.channels li:last-child {
+  border-bottom: none;
+}
+
+#message {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.support form p {
+  margin-bottom: 0.75rem;
+}
