@@ -62,7 +62,9 @@
   color: var(--text-2);
 }
 
-.stat-card {
+.stat-card,
+.clients,
+.activity-feed {
   background: #ffffff;
   border: 2px solid var(--border);
   border-radius: var(--radius);
@@ -78,4 +80,63 @@
 .stat-delta {
   color: var(--text-2);
   font-size: 0.8rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  caption-side: bottom;
+  padding-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+thead th {
+  padding: 0.5rem 0.75rem;
+  background: var(--input);
+  border-bottom: 2px solid var(--border);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+tbody th,
+td {
+  padding: 0.625rem 0.75rem;
+  border-bottom: 2px solid var(--faint);
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody th {
+  font-weight: 500;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--input);
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.activity-feed ul {
+  margin-top: 0.5rem;
+}
+
+.activity-feed li {
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--faint);
+}
+
+.activity-feed li:last-child {
+  border-bottom: none;
 }
