@@ -1,0 +1,39 @@
+.login-form {
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.login-pitch h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.login-pitch p {
+  color: var(--text-2);
+  font-size: 1rem;
+}
+
+.login-form h2 {
+  font-size: 1.25rem;
+}
+
+.login-form > p {
+  color: var(--text-2);
+  font-size: 0.8rem;
+}
+
+.login-form form {
+  margin: 1.25rem 0;
+}
+
+.login-form button {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .login-pitch h1 {
+    font-size: 1.5rem;
+  }
+}

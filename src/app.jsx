@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import './app.css';
+import { Login } from './login/login';
 
 export default function App() {
   return (
@@ -20,7 +21,7 @@ export default function App() {
         </header>
 
         <Routes>
-          <Route path="/" element={<Stub title="Sign in" />} />
+          <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Stub title="Portfolio" />} />
           <Route path="/tool-builder" element={<Stub title="Retention Report" />} />
           <Route path="/portal" element={<Stub title="Performance overview" />} />
