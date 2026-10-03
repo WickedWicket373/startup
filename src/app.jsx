@@ -1,0 +1,49 @@
+import React from 'react';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import './app.css';
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="flex flex-col gap-4 p-4 min-h-screen">
+        <header>
+          <p className="brand">ForgeCRM</p>
+          <nav aria-label="Primary navigation">
+            <ul>
+              <li><NavLink to="/" end>Login</NavLink></li>
+              <li><NavLink to="/dashboard">Agency Dashboard</NavLink></li>
+              <li><NavLink to="/tool-builder">Tool Builder</NavLink></li>
+              <li><NavLink to="/portal">Client Portal</NavLink></li>
+              <li><NavLink to="/about">About</NavLink></li>
+            </ul>
+          </nav>
+        </header>
+
+        <Routes>
+          <Route path="/" element={<Stub title="Sign in" />} />
+          <Route path="/dashboard" element={<Stub title="Portfolio" />} />
+          <Route path="/tool-builder" element={<Stub title="Retention Report" />} />
+          <Route path="/portal" element={<Stub title="Performance overview" />} />
+          <Route path="/about" element={<Stub title="About ForgeCRM" />} />
+        </Routes>
+
+        <footer>
+          <p>ForgeCRM is a CS 260 (Web Programming) startup project at BYU. Built by Jacob Arnold.</p>
+          <ul>
+            <li><a id="github-link" href="https://github.com/WickedWicket373/startup">View the code on GitHub</a></li>
+            <li><NavLink to="/about">About this project</NavLink></li>
+          </ul>
+        </footer>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+function Stub({ title }) {
+  return (
+    <main className="flex-1">
+      <h1>{title}</h1>
+      <p>Coming soon.</p>
+    </main>
+  );
+}
