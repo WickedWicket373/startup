@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import './app.css';
 import { Login } from './login/login';
+import { Dashboard } from './dashboard/dashboard';
 
 export default function App() {
   return (
@@ -22,7 +23,7 @@ export default function App() {
 
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Stub title="Portfolio" />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tool-builder" element={<Stub title="Retention Report" />} />
           <Route path="/portal" element={<Stub title="Performance overview" />} />
           <Route path="/about" element={<Stub title="About ForgeCRM" />} />
