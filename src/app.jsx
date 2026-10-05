@@ -4,6 +4,7 @@ import './app.css';
 import { Login } from './login/login';
 import { Dashboard } from './dashboard/dashboard';
 import { Portal } from './portal/portal';
+import { ToolBuilder } from './toolBuilder/toolBuilder';
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/tool-builder" element={<Stub title="Retention Report" />} />
+          <Route path="/tool-builder" element={<ToolBuilder />} />
           <Route path="/portal" element={<Portal />} />
           <Route path="/about" element={<Stub title="About ForgeCRM" />} />
         </Routes>
