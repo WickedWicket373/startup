@@ -30,6 +30,7 @@ export default function App() {
           <Route path="/tool-builder" element={<ToolBuilder />} />
           <Route path="/portal" element={<Portal />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <footer>
@@ -44,11 +45,13 @@ export default function App() {
   );
 }
 
-function Stub({ title }) {
+function NotFound() {
   return (
     <main className="flex-1">
-      <h1>{title}</h1>
-      <p>Coming soon.</p>
+      <h1>404</h1>
+      <p>
+        That page doesn't exist. <NavLink to="/">Back to sign in</NavLink>
+      </p>
     </main>
   );
 }
