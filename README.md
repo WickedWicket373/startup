@@ -101,10 +101,16 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - I did not complete this part of the deliverable.
+- [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
+- [x] **Bundled using Vite** - The app is bundled with Vite (`npm run dev` for hot reloading, `npm run build` for production). `index.html` loads `index.jsx`, which renders the `App` component. Tailwind is installed through npm with the `@tailwindcss/vite` plugin instead of the CDN script. `deployReact.sh` builds the bundle and copies `dist` to my server.
+- [x] **Components** - Each HTML page is now a React component with its own CSS file, keeping all of the HTML and styling from the CSS deliverable:
+  - `src/login/login.jsx` - sign-in page
+  - `src/dashboard/dashboard.jsx` - agency Portfolio dashboard (sidebar, KPI cards, clients table, live activity feed)
+  - `src/toolBuilder/toolBuilder.jsx` - AI Tool Builder (prompt, data sources, build steps, canvas, widget properties, JSON spec)
+  - `src/portal/portal.jsx` - Acme Retail client portal (stats, MRR, top channels, support form)
+  - `src/about/about.jsx` - about page with the design mockups
+  - `src/app.jsx` holds the shared header, nav, and footer (my name and the GitHub link), and `src/app.css` holds the shared styles.
+- [x] **Router** - `react-router-dom` `BrowserRouter` with routes for `/`, `/dashboard`, `/tool-builder`, `/portal`, and `/about`, plus a 404 route for anything else. The header uses `NavLink`, so the current page is highlighted automatically.
 
 ## 🚀 React part 2: Reactivity deliverable
 
